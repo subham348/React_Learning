@@ -11,23 +11,33 @@ class Form extends Component {
     };
   }
 
-  handleUsernameChange = (event) => {
-    this.setState({
-      username: event.target.value,
-    });
-  };
+  // handleUsernameChange = (event) => {
+  //   this.setState({
+  //     username: event.target.value,
+  //   });
+  // };
 
-  handleCommentsChange = (event) => {
-    this.setState({
-      comments: event.target.value,
-    });
-  };
+  // handleCommentsChange = (event) => {
+  //   this.setState({
+  //     comments: event.target.value,
+  //   });
+  // };
 
-  handleTopicChange = (event) => {
-    this.setState({
-      topic: event.target.value,
-    });
-  };
+  // handleTopicChange = (event) => {
+  //   this.setState({
+  //     topic: event.target.value,
+  //   });
+  // };
+
+  handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState((state) => ({
+      ...state,
+      [name]: value
+    }))
+  }
 
   handleSubmit = (event) => {
     alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`);
@@ -42,19 +52,21 @@ class Form extends Component {
           <input
             type="text"
             value={this.state.username}
-            onChange={this.handleUsernameChange}
+            onChange={this.handleChange}
+            name="username"
           />
         </div>
         <div>
           <label>Comments</label>
           <textarea
             value={this.state.comments}
-            onChange={this.handleCommentsChange}
+            onChange={this.handleChange}
+            name="comments"
           ></textarea>
         </div>
         <div>
           <label>Topic</label>
-          <select value={this.state.topic} onChange={this.handleTopicChange}>
+          <select value={this.state.topic} onChange={this.handleChange} name="topic">
             <option value="react">React</option>
             <option value="angular">Angular</option>
             <option value="vue">Vue</option>

@@ -35,10 +35,13 @@ import User from "./components/User";
 import CounterTwo from "./components/CounterTwo";
 import ComponentC from "./components/ComponentC";
 import { UserProvider } from "./components/userContext";
+import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
 
 function App() {
   return (
     <div className="App">
+      <PostForm />
       <UserProvider value="Vishwas">
         <ComponentC />
       </UserProvider>
@@ -95,6 +98,9 @@ function App() {
       <Inline />
       <h1 className="error">Error</h1>
       <h1 className={styles.success}>Success</h1>
+
+      {/* HTTP Concepts */}
+      <PostList />
     </div>
   );
 }
