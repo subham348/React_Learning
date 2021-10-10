@@ -31,16 +31,23 @@ import ClickCounter from "./components/ClickCounter";
 import HoverCounter from "./components/HoverCounter";
 import ClickCounterTwo from "./components/ClickCounterTwo";
 import HoverCounterTwo from "./components/HoverCounterTwo";
-import User from "./components/User";
+// import User from "./components/User";
 import CounterTwo from "./components/CounterTwo";
 import ComponentC from "./components/ComponentC";
 import { UserProvider } from "./components/userContext";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
+import HookCounter from "./components/HookCounter";
+import HookCounterTwo from "./components/HookCounterTwo";
 
 function App() {
   return (
     <div className="App">
+      <HookCounter />
+      <HookCounterTwo />
+      <br />
+      <hr />
+      <br />
       <PostForm />
       <UserProvider value="Vishwas">
         <ComponentC />
